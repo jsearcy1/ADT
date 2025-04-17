@@ -97,8 +97,8 @@ class DynamicArray(ListABC):
                 new_array = np.empty(new_capacity, dtype=self._dtype)
                 for i in range(self._capacity):
                     new_array[i] = self._array[i]
-                    self._capacity = new_capacity
-                    self._array = new_array
+                self._capacity = new_capacity
+                self._array = new_array
             except:
                 raise MemoryError('DynamicArray.add - unable to grow array')
         self._array[self._size] = datum
@@ -178,4 +178,35 @@ if __name__=="__main__":
     test=DynamicArray(capacity=1)
     for i in range(10):
         test.add(i)
-        print(test)
+        print(test,test.toArray())
+    print('iter test',[i for i in test])
+
+    print('Memory Exception Test')
+    try:
+        DynamicArray(capacity=int(1e13))
+    except Exception as e:
+        print(e)
+
+    test[4]=4
+    print('Index 3',test[3],test[3]==3)
+ 
+    print('Index Exception Test 1')
+    try:
+        print('Exception Test',test[-1])
+    except Exception as e:
+        print(e)
+
+        
+    print('Index Exception Test 2')
+    try:
+        print('Exception Test',test[11])
+    except Exception as e:
+        print(e)
+
+    print('Type Exception Test')
+    try:
+        test.add(3.4)
+    except Exception as e:
+        print(e)
+
+        
