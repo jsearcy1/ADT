@@ -174,39 +174,3 @@ class DynamicArray(ListABC):
         x = self._array[0:n].copy()
         return it.Iterator(n, x)
         
-if __name__=="__main__":
-    test=DynamicArray(capacity=1)
-    for i in range(10):
-        test.add(i)
-        print(test,test.toArray())
-    print('iter test',[i for i in test])
-
-    print('Memory Exception Test')
-    try:
-        DynamicArray(capacity=int(1e13))
-    except Exception as e:
-        print(e)
-
-    test[4]=4
-    print('Index 3',test[3],test[3]==3)
- 
-    print('Index Exception Test 1')
-    try:
-        print('Exception Test',test[-1])
-    except Exception as e:
-        print(e)
-
-        
-    print('Index Exception Test 2')
-    try:
-        print('Exception Test',test[11])
-    except Exception as e:
-        print(e)
-
-    print('Type Exception Test')
-    try:
-        test.add(3.4)
-    except Exception as e:
-        print(e)
-
-        
