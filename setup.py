@@ -9,7 +9,14 @@ setup(
                 'arraystack',
                 'dynamicarray',
                 'listABC',
-                'stackABC']
+                'stackABC',
+                'arrayqueue',
+                'boundedarraystackint',
+                'boundedstackintABC',
+                'queueABC'] 
+
+
+    ]
 ,
     install_requires=[],
 )

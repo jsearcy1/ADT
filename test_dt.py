@@ -1,6 +1,8 @@
 import numpy as np
 from dynamicarray import DynamicArray
 from arraystack import ArrayStack
+from boundedarraystackint import  BoundedArrayStackInt 
+from arrayqueue import ArrayQueue
 
 def test_dynamic_array_capacity():
     dynarr=DynamicArray(capacity=1)
@@ -36,5 +38,18 @@ def test_arraystack_iter():
     assert [i for i in stack]==[2,1,0]
 
     
+def test_boundedarraystackint_pop():
+    stack=BoundedArrayStackInt()
+    [stack.push(i) for i in range(3)]    
+    assert [stack.pop() for i in range(3)]==[2,1,0]
 
+    
+
+
+def test_arrayqueue():
+    queue=ArrayQueue()
+    [queue.enqueue(i) for i in range(3)]    
+    assert [queue.dequeue() for i in range(3)]==[0,1,2]
+
+    
 
