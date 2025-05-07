@@ -3,6 +3,8 @@ from dynamicarray import DynamicArray
 from arraystack import ArrayStack
 from boundedarraystackint import  BoundedArrayStackInt 
 from arrayqueue import ArrayQueue
+from lliststack import LListStack
+
 
 def test_dynamic_array_capacity():
     dynarr=DynamicArray(capacity=1)
@@ -43,13 +45,25 @@ def test_boundedarraystackint_pop():
     [stack.push(i) for i in range(3)]    
     assert [stack.pop() for i in range(3)]==[2,1,0]
 
-    
-
-
 def test_arrayqueue():
     queue=ArrayQueue()
     [queue.enqueue(i) for i in range(3)]    
     assert [queue.dequeue() for i in range(3)]==[0,1,2]
 
-    
+def test_llstack_push():
+   new_stack=LListStack()
+   new_stack.push(26)
+   assert new_stack._count == 1
+
+
+def test_llstack_dtype_exception():
+   new_stack=LListStack(dtype=float)
+   exc=None
+   try:
+       new_stack.push(int(26))
+   except Exception as e:
+       exc=e
+       pass
+
+   assert not (exc is None)
 
