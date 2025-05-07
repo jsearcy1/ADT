@@ -14,9 +14,6 @@ setup(
                 'boundedarraystackint',
                 'boundedstackintABC',
                 'queueABC'] 
-
-
-    ]
 ,
     install_requires=[],
 )
