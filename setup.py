@@ -10,6 +10,7 @@ setup(
                 'dynamicarray',
                 'listABC',
                 'stackABC',
+                'dequeueABC',
                 'arrayqueue',
                 'boundedarraystackint',
                 'boundedstackintABC',
