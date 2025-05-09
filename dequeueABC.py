@@ -15,7 +15,6 @@ class DequeABC(ABC):
         """
         Clear elements from Deque
         Effects
-        155156 CHAPTER 9. DEQUES - DOUBLE-ENDED QUEUES
         - Deque is empty
         """
         pass
