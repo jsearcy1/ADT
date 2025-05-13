@@ -14,7 +14,9 @@ setup(
                 'arrayqueue',
                 'boundedarraystackint',
                 'boundedstackintABC',
-                'queueABC'] 
+                'queueABC',
+                'PrioQueueABC'
+    ] 
 ,
     install_requires=[],
 )
