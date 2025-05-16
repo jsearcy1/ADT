@@ -15,7 +15,8 @@ setup(
                 'boundedarraystackint',
                 'boundedstackintABC',
                 'queueABC',
-                'prioqueueABC'
+                'prioqueueABC',
+                'heapprioqueue'
     ] 
 ,
     install_requires=[],
