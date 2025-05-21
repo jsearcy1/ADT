@@ -33,6 +33,8 @@ def typemap(dtype) -> 'appropriate numpy type':
         out = np.dtype(np.int64)
     elif dtype == type(float()):
         out = np.dtype(np.float64)
+    elif dtype== str:
+        out=object
     else:
         out = dtype
     return out

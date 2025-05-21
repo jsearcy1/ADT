@@ -29,6 +29,7 @@ import numpy as np
 import ADTiterator as it
 from ADTexceptions import *
 from ADTtypemap import typemap
+import pdb
 
 class DynamicArray(ListABC):
     """
@@ -85,7 +86,7 @@ class DynamicArray(ListABC):
         - TypeError if the type of datum is not the same as _dtype
         - MemoryError if allocation of a larger array fails
         """
-        if type(datum) != self._dtype:
+        if typemap(type(datum)) != self._dtype:
             raise TypeError(
                 'DynamicArray.add - type(datum) {} != {}'.format(
                     type(datum), self._dtype
@@ -141,7 +142,7 @@ class DynamicArray(ListABC):
             - TypeError if type mismatch between datum and _dtype
             - IndexError if index < 0 or index >= _size
         """
-        if type(datum) != self._dtype:
+        if typemap(type(datum)) != self._dtype:
             raise TypeError('DynamicArray.add - type(datum) {} != {}'.format(
                 type(datum), self._dtype))
             

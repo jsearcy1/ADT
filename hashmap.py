@@ -315,7 +315,7 @@ class HashMap(MapABC):
                 x[j] = node._key
                 j += 1
                 node = node._next
-                i += 1
+            i += 1
         return x
 
     def _genArray_(self):
